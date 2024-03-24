@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="box2">hello</h1>
+    <div id="header">header</div>
+    <span class="box">box</span>
+    <div><hr></div>
+</body>
+</html>
+<script>
+    //页面基本控制结构的元素，通过document.元素名称进行获取
+    // 获取其他元素
+    // 1.id选择器
+    console.log(header);
+    console.log(document.getElementById('header'));
+    //2.className
+    console.log(document.getElementsByClassName('box'));
+    // console.log(document.getElementsByClassName('box')[0]);
+    //3.标签名
+    console.log(document.getElementsByTagName('div'));
+    // console.log(document.getElementsByTagName('div')[0]);
+    // 创建追加插入删除
+    var cDiv=document.createElement('div');//创建一个div
+    document.body.appendChild(cDiv);//把元素节点插入到父节点的最后位置
+    var oBox=document.getElementsByTagName('div')[0];
+    var oHr=document.getElementsByTagName('hr')[0];
+    var cp1=document.createElement('p');
+    var cp2=document.createElement('p');
+    oBox.appendChild(cp1);
+    oBox.insertBefore(cp2,oHr);
+    // document.body.removeChild(oBox);
+
+    //insertBefore(新加的节点，存在的节点)插入元素
+    //removeChild删除父节点中的子节点
+
+
+</script>

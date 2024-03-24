@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //函数对象
+    //1.声明式创建函数
+    function fn(){
+        console.log('声明式');
+    }
+
+    fn();
+    fn();
+    //2.赋值式创建函数
+    var fn=function(){
+        console.log('赋值式');
+    }
+    fn();
+
+    function sum(n1,n2,n3){
+        console.log(n1+n2+n3);
+    }
+    sum(1,2,3)
+
+    //函数的返回值
+    function sum(n1,n2,option){
+        switch(option){
+            case '+':
+                return n1+n2;
+            case '-':
+                return n1-n2;
+            case '*':
+                return n1*n2;
+            case '/':
+                return n1/n2;
+        }
+    }
+    console.log(sum(8,2,'+')+sum(6,3,'/'));
+    //局部作用域，只对函数内部有效
+
+    //数组对象
+    //数组：一组任意类型或相同类型的数据
+    //数组对象的创建：
+    //1.利用类来创建（构造函数） arr：数组对象 Array：类或者构造函数
+    var arr=new Array('zhangsan','lisi','wangwu');
+    //2.利用字面量创建
+    var arr1=['lisi','wangwu','zhangsan'];
+    //通过数组名称，输出数组项值
+    console.log(arr1);
+    //数组的操作：使用索引下标来读取数组的值--下标固定，是从0开始的整数
+    console.log(arr1[0]);
+    arr1[2]='张三'//修改
+    console.log(arr1[2]);
+    //length数组的长度，通过改变该数值，可以从数组的末尾移除项或添加新项
+    console.log(arr1.length);//3
+    arr1.length=2;
+    console.log(arr1.length);
+    console.log(arr1);//lisi,wangwu
+   
+    arr1.length=4;
+    arr1[2]='新项1';
+    arr1[3]='新项2';
+    console.log(arr1);
+//数组的方法
+    arr1.push('haha','yes');//把参数逐个添加到数组末尾
+    console.log(arr1);
+    arr1.pop();//删除最后一项
+    //.sort 按字母表进行排序
+    //.splice对数组进行删除，插入，替换
+    arr.splice(0,2);//第一个参数：开始删除的索引 第二个参数：删除的长度
+    arr.splice(0,0,'haha');
+    arr.splice(2,1,'yes');
+    //join将数组转换成字符串，参数为连接符
+
+    //自定义对象
+    var obj=new Object();
+    obj.name='zhangsan';
+    obj.age='8';
+
+    var obj1={
+        name:'zhangsan',
+        age:'8',
+        show:function(){
+            return obj.name+obj.age;
+        }
+    }
+//数组和对象的遍历
+    for(var attr in obj1){
+        console.log(attr);
+    }
+    //字符串对象
+    var str=new String('hello');//返回object
+    var str1='hi';//返回string
+    //字符串属于类数组
+    // 字符串的方法
+    //trim删除前后缀的所有空格
+    var str='   abc  de   ';
+    console.log(str.trim());
+    //split 根据分隔符，将字符串分成数组
+    console.log(str.split('c'));
+    //substring 截取字符串的内容
+    //toUpperCase转换成大写
+    //toLowerCase转换成小写
+    console.log(Math.round(Math.random()*10));//0-10的随机数
+    //获取日期对象
+    var date=new Date();
+    console.log(date.toDateString());
+    //设置日期对象
+    var d=new Date(2024,3,24,15,19);
+</script>

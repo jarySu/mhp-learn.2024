@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="height: 3000px;">
+    <script>
+        window.onload=function(){
+            console.log('box');
+        }
+            
+    </script>
+
+        <div class="box">hello</div>
+
+    <script>
+        console.log('box');
+    </script>
+</body>
+</html>
+<script>
+    //BOM下面的子对象
+    //location：控制浏览器的地址栏
+    // href属性：读写地址栏中的相关信息
+    console.log(location.href);
+    //location.href='http://www.taobao.com';
+
+    //reload：刷新页面，设置参数为true。从缓存中刷新
+    alert('你好');
+   // location.reload(true);
+
+    //可视区的宽高
+    console.log(document.documentElement.clientWidth,document.documentElement.clientHeight);
+
+    //BOM的常用事件
+    //1.onload：页面内容加载完成后出发此事件，可将js代码写在文档的任意位置
+    //2.onscroll:拖动浏览器的滚动条触发
+    //3. oversize：浏览器窗口缩放触发
+
+    //滚动条距离：（比例距离）
+    console.log(document.documentElement.scrollTop);
+    //回到顶部效果
+    document.onclick=function(){
+        document.documentElement.scrollTop=0;
+    }
+    //定时器
+    var num=1;
+    var timer=null;
+    timer=window.setInterval (function(){//间隔定时器
+        console.log(num);
+        num++;
+        if(timer==11){
+            clearInterval(timer)//停止计时器
+        }
+    },1000)
+    setTimeout//延时定时器
+    //open和close
+    // window.open('log on.html','_blank')//打开一个新窗口
+    // window.open('log on.html','_self')//直接在本页面打开
+    // close只能关闭open打开的页面
+
+</script>

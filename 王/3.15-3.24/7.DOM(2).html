@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="box2">hello</h1>
+    <div class="header"></div>
+    <div class="box">123456</div>
+    <!-- 表单 -->
+    <form action=""method="get"></form>
+        <label for="usesername">用户名：</label><input type="text" id="usesername">
+</body>
+</html>
+<script>
+    //innerHTML读写元素节点的内容（包括元素）
+    var oH=document.getElementById('box2');
+    console.log(oH.innerHTML);
+    oH.innerHTML='我是改变后的内容'
+    //parentNote取元素的父节点
+    console.log(oH.parentNode);
+    //设置css的属性和值
+    /*var header=document.getElementsByClassName('header')[0];
+    header.style.width='200px';
+    header.style.height='200px';
+    header.style.background='blue';*/
+    header.style.cssText='width:200px;height:200px;background:blue'
+
+    // div:元素节点 class='box':属性节点 123456：文本节点
+    var oBox=document.getElementsByClassName('box')
+    console.log(oBox.nodeName);
+    console.log(oBox.nodeType);//节点的类型：元素节点1 属性节点2 文本节点3
+    console.log(oBox.nodeValue);//null 元素节点不存在节点值
+
+    // 表单
+    var input1=document.getElementsByTagName('input');
+    var form=document.getElementsByTagName('form');
+    input1.onfocus=function(){
+        console.log('得到焦点');
+    }
+    input1.onblur=function(){
+        console.log('失去焦点');
+    }
+    form.onsubmit=function(){
+        console.log('表单提交事件');
+    }
+    //鼠标 键盘
+
+</script>
